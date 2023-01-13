@@ -34,7 +34,7 @@ public class EnderecoController {
                     @ApiResponse(responseCode = "500", description = "Foi gerada uma exceção")
             }
     )
-    @PostMapping("/{idPessoa}")
+    @PostMapping
     ResponseEntity<EnderecoDTO> salvar(@Valid @RequestBody EnderecoCreateDTO pessoa) throws RegraDeNegocioException {
         return new ResponseEntity<>(enderecoService.create(pessoa), HttpStatus.OK);
     }
